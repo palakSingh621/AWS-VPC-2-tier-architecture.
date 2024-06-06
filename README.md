@@ -90,3 +90,21 @@ Creating a new Security Group with allowing only ssh request through the instanc
 Launching the Bastion-Host instance!!
 Two Public instances and a Bastion-host running...
 ![img19](https://github.com/palakSingh621/AWS-VPC-2-tier-architecture./assets/107800373/177cdd42-f4be-4616-8c0d-dfe11f08fa47)
+
+To access the Private instances through the Bastion Host we need  to copy the key pair rem file to the private instances from the local machine.
+
+
+The command to copy the key Pair file from local host to the private instance:
+
+``` scp -i <Path of the key Pair file> <Path of the key Pair file> ubuntu@<Private IP>:/home/ubuntu ```
+
+### Problem Case1:
+But running this command directly over the terminal of Windows (i.e, in my case) was not getting the job done. As it was not denying the permission to copy the keyPair file.
+![img20](https://github.com/palakSingh621/AWS-VPC-2-tier-architecture./assets/107800373/091c3c44-b5e8-4a07-a7c5-ccfe0534abe7)
+
+To solve this problem we need to change the permissions of the Key File with the Command,
+
+``` chmod 400 <Key_Pair>.pem```
+
+ To configure this command in Windows:
+ First enable the OpenSSL Client in Services. This will allow the Windows terminal or Command Prompt.
