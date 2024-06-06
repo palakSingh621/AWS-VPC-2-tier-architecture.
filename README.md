@@ -42,5 +42,40 @@ do in an ordinary private cloud, but the private cloud is hosted remotely by a p
   Amazon EC2 Auto Scaling helps maintaining application availability and automatically add or remove EC2 instances using defined scaling policies. Dynamic or
   predictive scaling policies helps adding or removing EC2 instance capacity to service established or real-time demand patterns. The fleet management features of Amazon EC2 Auto
   Scaling help maintain the health and availability of your fleet.
+![img5](https://github.com/palakSingh621/AWS-VPC-2-tier-architecture./assets/107800373/9362179f-8f1c-423a-a508-f2301b230d31)
 
-  Step one of creating Auto-scaling group is to choose the Launch template.
+### A. Creating the Launch template
+![img6](https://github.com/palakSingh621/AWS-VPC-2-tier-architecture./assets/107800373/e099b365-d952-405b-bc7e-7e25d9f0265b)
+
+ Setting the AMI to Ubuntu latest Version
+![img7](https://github.com/palakSingh621/AWS-VPC-2-tier-architecture./assets/107800373/80872579-f25d-43f6-bf45-40027a0826d5)
+
+ Selecting the Key Pair.
+![img8](https://github.com/palakSingh621/AWS-VPC-2-tier-architecture./assets/107800373/f990957f-ca0d-4e97-a4bb-bb63339f1671)
+
+Creating a Security group to allow ssh and Custom TCP for Port 8080(i.e. The hosting IP for the application) access to the VPC subnets 
+![img9](https://github.com/palakSingh621/AWS-VPC-2-tier-architecture./assets/107800373/1626b29f-0e88-48e6-a7bc-4ee1622228c0)
+![img10](https://github.com/palakSingh621/AWS-VPC-2-tier-architecture./assets/107800373/fdc70ea1-daf5-4a8a-b83f-824d9715fd34)
+
+### B.Creating the Auto-Scaling Group
+Selecting the created launch instance.
+![img11](https://github.com/palakSingh621/AWS-VPC-2-tier-architecture./assets/107800373/eeff3a6b-6f80-484d-a564-97293a949567)
+
+Setting the VPC to define the network for Auto-scaling group.
+Defining Subents,instances and Availabilty-Zones in the VPC to be used by Auto-Scaling Group.
+Here, I've provided my private Sunets from my teo Availibilty Zones. 
+![img12](https://github.com/palakSingh621/AWS-VPC-2-tier-architecture./assets/107800373/89b7f8da-edd0-47cc-aa94-3e14d8056bd8)
+
+Leaving everything else as default we create the Auto-scaling Group.
+![img13](https://github.com/palakSingh621/AWS-VPC-2-tier-architecture./assets/107800373/548fe799-5906-4acd-bde8-3f0e1578ef3b)
+
+After Creation of Auto-Scaling Group, Two private instances are created in both the Availability-Zones.
+![img14](https://github.com/palakSingh621/AWS-VPC-2-tier-architecture./assets/107800373/fa1fb05e-12e9-4570-a322-75e6efe20285)
+
+![img15](https://github.com/palakSingh621/AWS-VPC-2-tier-architecture./assets/107800373/945b2865-e37a-4206-8016-df182cc95ba7)
+
+## Step 3: Creating A Bastion Host
+
+
+
+
