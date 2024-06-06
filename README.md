@@ -75,7 +75,18 @@ After Creation of Auto-Scaling Group, Two private instances are created in both 
 ![img15](https://github.com/palakSingh621/AWS-VPC-2-tier-architecture./assets/107800373/945b2865-e37a-4206-8016-df182cc95ba7)
 
 ## Step 3: Creating A Bastion Host
+### Bastion Host
+A bastion host is a server used to manage access to an internal or private network from an external network - sometimes called a jump box or jump server. 
 
+Launching an Instance named Bastion-host with Ubuntu latest AMI(Amazon Machine Image).
+![img16](https://github.com/palakSingh621/AWS-VPC-2-tier-architecture./assets/107800373/488347ae-84d7-4780-9db4-ba5ed961a91c)
 
+Providing the created VPC for the Network Connection and Enabling Auto-assigning the Public IP.
+![img17](https://github.com/palakSingh621/AWS-VPC-2-tier-architecture./assets/107800373/7ee0bf2b-81e0-4f54-9700-5697fc4c4792)
 
+Creating a new Security Group with allowing only ssh request through the instance.
+![img18](https://github.com/palakSingh621/AWS-VPC-2-tier-architecture./assets/107800373/00fbde94-ddb4-4c2b-acac-98c19f5f48dc)
 
+Launching the Bastion-Host instance!!
+Two Public instances and a Bastion-host running...
+![img19](https://github.com/palakSingh621/AWS-VPC-2-tier-architecture./assets/107800373/177cdd42-f4be-4616-8c0d-dfe11f08fa47)
